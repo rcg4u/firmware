@@ -6,6 +6,7 @@
 <meta charset="utf-8"/>
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script src="shared.js"></script>
+<script src="translations.js"></script>
 
 <script type="text/javascript">
 var html_cache = {};
@@ -21,6 +22,21 @@ function adv_apply()
 		inputs[i].disabled = adv_mode ? "": "disabled";
 	for(var i=0;  i < elems.length; i++)
 		elems[i].style.display = adv_mode ? "block" : "none";
+}
+
+// Apply translation
+function i18n_translate_site()
+{
+  var select = document.getElementById("i18n_language");
+  var mapping = translations[select.value];
+  for (var id in mapping) {
+    var elements = document.getElementsByClassName(id);
+    for (var i in elements) {
+      if (elements.hasOwnProperty(i)) {
+        elements[i].innerText = mapping[id];
+      }
+    }
+  }
 }
 
 function adv_toggle(e)
@@ -75,6 +91,8 @@ function nav_onclick()
 	onDesc($("globalnav"), 'A', function(n) { removeClass(n, "here"); });
 	onParents(this, 'LI', function(n) { addClass(n.firstChild, "here"); });
 
+	i18n_translate_site();
+
 	return false;
 }
 
@@ -115,7 +133,7 @@ function logout() {
 </noscript>
 
 <ul id="globalnav">
-	<li><a href="home.html" id="first">Home</a></li>
+	<li><a href="home.html" id="first" class="tr-home">Home</a></li>
 	<li><a href="settings.html">Einstellungen</a></li>
 	<li><a href="network.html">Netzwerk</a></li>
 	<li><a href="wifiscan.html">WLAN-Scan</a></li>
@@ -124,12 +142,18 @@ function logout() {
 	<li><a href="#" onclick="reboot()">Neustart</a></li>
 	<li><a href="#" onclick="logout()">Logout</a></li>
 	<li><a href="#" onclick="adv_toggle(this)">Erweitert: Aus</a></li>
+	<li><a href="#">
+		<select id="i18n_language" onchange="i18n_translate_site()">
+			<option value="de" selected="selected">DE</option>
+			<option value="en">EN</option>
+		</select></a>
+	</li>
 	<li class="icon">
 		<a href="#" style="font-size:15px;" onclick="$('globalnav').classList.toggle('responsive')">☰</a>
 	</li>
 </ul>
 <br>
-<pre id="msg" tabindex="-1">Um diese Seite anzuzeigen, muss JavaScript aktiviert sein.</pre>
+<pre id="msg" tabindex="-1">To see this site, please enable JavaScript.</pre>
 
 <div id="help"></div>
 
