@@ -74,7 +74,7 @@ function appendSetting(p, path, value, mode)
 		b = append_input(p, "contact details", id, value);
 		b.lastChild.placeholder = "info@example.com";
 		addInputCheck(b.lastChild, /^$|^[\-\^'\w\.\:\[\]\(\)\/ &@\+\u0080-\u00FF]{0,50}$/, "Ung\xfcltige Eingabe.");
-		addHelpText(b, "Contact details for the public free-radio card and status page. If you want to be contacted by other people (for example, \ "info@example.com \").");
+		addHelpText(b, "Contact details for the public free-radio card and status page. If you want to be contacted by other people (for example, \"info@example.com \").");
 		break;
 	case "community_url":
 		b = append_input(p, "Community-Webseite", id, value);
@@ -94,7 +94,7 @@ function appendSetting(p, path, value, mode)
 		}
 		if (cfg == "fastd") {
 			b = append_radio(p, "Fastd VPN", id, value, [["An", "1"], ["Aus", "0"]]);
-			addHelpText(b, "Establish a VPN connection to the server \xvia WAN (via fastd).");
+			addHelpText(b, "Establish a VPN connection to the server via WAN (via fastd).");
 			addClass(b, "adv_hide");
 		}
 		break;
@@ -124,7 +124,7 @@ function appendSetting(p, path, value, mode)
 		b = append_input(p, "Service Link", id, value);
 		b.lastChild.placeholder = "http://["+addr_prefix+":1]/index.html";
 		addInputCheck(b.lastChild, regexp, "Ung\xfcltige Eingabe.");
-		addHelpText(b, "A reference to an _internal_ network resource. For example, \ "Http: // [" + addr_prefix + ": 1] /index.html \".");
+		addHelpText(b, "A reference to an _internal_ network resource. For example, \"Http: // [" + addr_prefix + ": 1] /index.html \".");
 		break;
 	case "service_label":
 		b = append_input(p, "Service Name", id, value);
