@@ -43,6 +43,24 @@ var translations = {
 		tr_delete: 'Delete',
 		tr_wifi_help: 'Does the interface work? For example, some wireless drivers may not be able to access point and mesh at the same time.',
 
+		tr_contribute_map: 'Contribute to map.',
+		tr_community_site: 'Community Site',
+		tr_node_name_help: 'The name of this node on the free-radio card.',
+		tr_contact_help: 'Contact details for the public free-radio card and status page. If you want to be contacted by other people (for example, \'info@example.com \').',
+		tr_gps_help: 'GPS coordinate of this node on the free-radio card.',
+		tr_website_help: 'Website of the community this node belongs to.',
+		tr_invalid_input: 'Invalid input.',
+		tr_contact_details: 'Contact details',
+		tr_invalid_gps: 'Invalid input. Please use only up to 8 fractional digits, no commas or leading zeros.',
+		tr_access_help: 'Allow access to the configuration via various ports / networks.',
+		tr_channel_help: 'The channel on which the wireless card is sending. Please keep in mind that routers can not see if both sides are transmitting on different channels. The first channel is therefore recommended.',
+		tr_announce: 'Announce contents',
+		tr_autoupdater_help: 'The Autoupdater automatically updates the firmware to the latest version.',
+
+		tr_latitude: 'Breitengrad',
+		tr_longitude: 'L\xe4ngengrad',
+		tr_node_name: 'Node name',
+
 		tr_transferred: 'Data Transfered'
 	},
 	de: {
@@ -88,6 +106,24 @@ var translations = {
 		tr_delete: 'L\xf6schen',
 		tr_wifi_help: 'Funktioniert der Anschluss? Manche WLAN-Treiber k\xf6nnen z.B kein AccessPoint und Mesh gleichzeitig.',
 
+		tr_contribute_map: 'Zur Karte beitragen',
+		tr_community_site: 'Community-Webseite',
+		tr_node_name_help: 'Der Name dieses Knotens auf der Freifunk-Karte.',
+		tr_contact_help: 'Kontaktdaten f\xfcr die \xf6ffentliche Freifunk-Karte und Statusseite. Falls ihr euch von anderen Leuten kontaktieren lassen wollt (z.B. \'info@example.com\').',
+		tr_gps_help: 'GPS-Koordinate dieses Knotens auf der Freifunk-Karte.',
+		tr_website_help: 'Webseite der Community, zu der dieser Knoten geh\xf6rt.',
+		tr_invalid_input: 'Ung\xfcltige Eingabe.',
+		tr_contact_details: 'Kontaktdaten',
+		tr_invalid_gps: 'Ung\xfcltige Eingabe. Bitte nur maximal 8 Nachkommastellen, keine Kommas und f\xfchrende Nullen verwenden.',
+		tr_access_help: 'Zugang zur Konfiguration \xfcber verschiedene Anschl\xfcsse/Netzwerke erm\xf6glichen.',
+		tr_channel_help: 'Der Kanal auf dem die WLAN-Karte sendet. Bitte denk daran, dass sich Router nicht sehen k\xf6nnen wenn beide Seiten auf unterschiedlichen Kan\xe4len funken. Der erste Kanal ist daher zu empfehlen.',
+		tr_announce: 'Inhalte verkünden',
+		tr_autoupdater_help: 'Der Autoupdater aktualisiert die Firmware automatisch auf die neuste Version.',
+
+		tr_latitude: 'Latitude',
+		tr_longitude: 'longitude',
+		tr_node_name: 'Knotenname',
+
 		tr_transferred: 'Data'
 	}
 }
@@ -95,17 +131,6 @@ var translations = {
 /*
 		tr_neighbornode: 'Nachbarknoten', Neighboring nodes
 		tr_allnodes: 'Lokale Clients', Local clients
-		'Extended An'
-		'Extended: Aus'
-
-'Land'
-'Country'
-
-'Kanal'
-'Channel'
-
-'Der Kanal auf dem die WLAN-Karte sendet. Bitte denk daran, dass sich Router nicht sehen k\xf6nnen wenn beide Seiten auf unterschiedlichen Kan\xe4len funken. Der erste Kanal ist daher zu empfehlen.'
-'The channel on which the wireless card is sending. Please keep in mind that routers can not see if both sides are transmitting on different channels. The first channel is therefore recommended.'
 
 'Sendeleistung',
 transmission power',
@@ -193,32 +218,14 @@ Settings
 Allgemeine Einstellungen
 General Settings
 
-Inhalte verkünden
-Announce contents
-
 Jeder Router kann einen Eintrag auf der Statusseite aller anderen Router anzeigen lassen. Dies soll helfen, Inhalte im Freifunknetz zu finden.
 Each router can display an entry on the status page of all other routers. This should help to find content in the free radio network.
-
-Bandbreitenkontrolle
-Bandwidth Control
 
 Die für das Freifunknetz beanspruchte Internet-Bandbreite am WAN kann hier begrenzt werden.
 The internet bandwidth on the WAN used for the free-wireless network can be limited here.
  
 Speichern
 Save
-
-Breitengrad
-Latitude
-
-Ung\xfcltige Eingabe. Bitte nur maximal 8 Nachkommastellen, keine Kommas und f\xfchrende Nullen verwenden.
-Invalid input. Please use only up to 8 fractional digits, no commas or preceding zeros.
-
-GPS-Koordinate dieses Knotens auf der Freifunk-Karte.
-GPS coordinate of this node on the free-radio card.
-
-longitude
-L\xe4ngengrad
 
 Knotenname
 node name
@@ -229,23 +236,8 @@ MyRouter
 Ung\xfcltige Eingabe
 Invalid input
 
-Der Name dieses Knotens auf der Freifunk-Karte.
-The name of this node on the free-radio card.
-
 Kontaktdaten
 contact details
-
-Kontaktdaten f\xfcr die \xf6ffentliche Freifunk-Karte und Statusseite. Falls ihr euch von anderen Leuten kontaktieren lassen wollt (z.B. \'info@example.com\').
-	Contact details for the public free-radio card and status page. If you want to be contacted by other people (for example, \ 'info@example.com \').');
-	
-	Community-Webseite
-	Community Site
-
-Webseite der Community, zu der dieser Knoten geh\xf6rt.
-Website of the community this node belongs to.
-
-Der Autoupdater aktualisiert die Firmware automatisch auf die neuste Version.
-The Autoupdater automatically updates the firmware to the latest version.
 
 Bandbreitenkontrolle
 Bandbreitenkontrolle f\xfcr den Upload-/Download \xfcber das Freifunknetz \xfcber den eigenen Internetanschluss.
@@ -256,9 +248,6 @@ Eine VPN-Verbindung zum Server \xfcber WAN aufbauen (per fastd).
 Establish a VPN connection to the server \xvia WAN (via fastd).
 
 
-Zur Karte beitragen
-Contribute to map.
-
 Mit wievielen Daten soll dieser Knoten zur Knotenkarte beitragen? (Wenig: Name/Version/Modell/Position/Kontakt, Mehr: +Uptime/+CPU-Auslastung, Alles: +Speicherauslastung/+IP-Adressen des Routers im Freifunk-Netz)
 How much data should this node contribute to the node card? (Little: Name / Version / Model / Position / Contact, More: + Uptime / + CPU Usage, All: + Memory Usage / + Router's IP addresses in the Free-Radio Network)
 
@@ -268,10 +257,6 @@ Maximum upload in kbps for bandwidth control.
 
 Maximaler Download in KBit/s f\xfcr die Bandbreitenkontrolle.
 	Maximum download in kbps for bandwidth control.
-
-
-	Zugang zur Konfiguration \xfcber verschiedene Anschl\xfcsse/Netzwerke erm\xf6glichen.
-	Allow access to the configuration via various ports / networks.
 
 
 Ein Verweis auf eine _interne_ Netzwerkresource. Z.B. \'http://['+addr_prefix+:1]/index.html\'.

@@ -53,68 +53,68 @@ function appendSetting(p, path, value, mode)
 	switch (name)
 	{
 	case "latitude":
-		b = append_input(p, "Latitude", id, value);
+		b = append_input(p, "tr_latitude", id, value);
 		b.lastChild.placeholder = "52.xxx";
-		addInputCheck(b.lastChild, /^$|^[1-9]\d{0,2}\.\d{1,8}$/, "Ung\xfcltige Eingabe. Bitte nur maximal 8 Nachkommastellen, keine Kommas und f\xfchrende Nullen verwenden.");
-		addHelpText(b, "GPS coordinate of this node on the free-radio card.");
+		addInputCheck(b.lastChild, /^$|^[1-9]\d{0,2}\.\d{1,8}$/, "tr_invalid_gps");
+		addHelp(b, "tr_gps_help");
 		break;
 	case "longitude":
-		b = append_input(p, "L\xe4ngengrad", id, value);
+		b = append_input(p, "tr_longitude", id, value);
 		b.lastChild.placeholder = "8.xxx";
-		addInputCheck(b.lastChild, /^$|^[1-9]\d{0,2}\.\d{1,8}$/, "Ung\xfcltige Eingabe. Bitte nur maximal 8 Nachkommastellen, keine Kommas und f\xfchrende Nullen verwenden.");
-		addHelpText(b, "GPS coordinate of this node on the free-radio card.");
+		addInputCheck(b.lastChild, /^$|^[1-9]\d{0,2}\.\d{1,8}$/, "tr_invalid_gps");
+		addHelp(b, "tr_gps_help");
 		break;
 	case "name":
-		b = append_input(p, "node name", id, value);
-		b.lastChild.placeholder = "MeinRouter";
-		addInputCheck(b.lastChild, /^$|^[\-\^'\w\.\:\[\]\(\)\/ &@\+\u0080-\u00FF]{0,32}$/, "Ung\xfcltige Eingabe.");
-		addHelpText(b, "The name of this node on the free-radio card.");
+		b = append_input(p, "tr_node_name", id, value);
+		b.lastChild.placeholder = "MyRouter";
+		addInputCheck(b.lastChild, /^$|^[\-\^'\w\.\:\[\]\(\)\/ &@\+\u0080-\u00FF]{0,32}$/, "tr_invalid_input");
+		addHelp(b, "tr_node_name_help");
 		break;
 	case "contact":
-		b = append_input(p, "contact details", id, value);
+		b = append_input(p, "tr_contact_details", id, value);
 		b.lastChild.placeholder = "info@example.com";
-		addInputCheck(b.lastChild, /^$|^[\-\^'\w\.\:\[\]\(\)\/ &@\+\u0080-\u00FF]{0,50}$/, "Ung\xfcltige Eingabe.");
-		addHelpText(b, "Contact details for the public free-radio card and status page. If you want to be contacted by other people (for example, \"info@example.com \").");
+		addInputCheck(b.lastChild, /^$|^[\-\^'\w\.\:\[\]\(\)\/ &@\+\u0080-\u00FF]{0,50}$/, "tr_invalid_input");
+		addHelp(b, "tr_contact_help");
 		break;
 	case "community_url":
-		b = append_input(p, "Community-Webseite", id, value);
+		b = append_input(p, "tr_community_site", id, value);
 		b.lastChild.placeholder = "http://muster.de";
 		addClass(b, "adv_hide");
 		addInputCheck(b.lastChild, /^$|^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/, "Ung\xfcltige URL.");
-		addHelpText(b, "Website of the community this node belongs to.");
+		addHelp(b, "tr_website_help");
 		break;
 	case "enabled":
 		if (cfg == "autoupdater") {
-			b = append_radio(p, "Autoupdater", id, value, [["An", "1"], ["Aus", "0"]]);
-			addHelpText(b, "The Autoupdater automatically updates the firmware to the latest version.");
+			b = append_radio(p, "Autoupdater", id, value, [["tr_on", "1"], ["tr_off", "0"]]);
+			addHelp(b, "tr_autoupdater_help");
 		}
 		if (cfg == "simple-tc") {
-			b = append_radio(p, "Bandbreitenkontrolle", id, value, [["An", "1"], ["Aus", "0"]]);
-			addHelpText(b, "Bandwidth control for the upload / download via the free wireless network via your own internet connection.");
+			b = append_radio(p, "tr_bandwidth_ctl", id, value, [["tr_on", "1"], ["tr_off", "0"]]);
+			addHelp(b, "Bandwidth control for the upload / download via the free wireless network via your own internet connection.");
 		}
 		if (cfg == "fastd") {
-			b = append_radio(p, "Fastd VPN", id, value, [["An", "1"], ["Aus", "0"]]);
-			addHelpText(b, "Establish a VPN connection to the server via WAN (via fastd).");
+			b = append_radio(p, "Fastd VPN", id, value, [["tr_on", "1"], ["tr_off", "0"]]);
+			addHelp(b, "Establish a VPN connection to the server via WAN (via fastd).");
 			addClass(b, "adv_hide");
 		}
 		break;
 	case "publish_map":
-		b = append_radio(p, "Contribute to the card", id, value, [["tr_none", "none"], ["tr_basic", "basic"], ["tr_more", "more"], ["tr_all", "all"]]);
-		addHelpText(b, "How much data should this node contribute to the node card? (Little: Name / Version / Model / Position / Contact, More: + Uptime / + CPU Usage, All: + Memory Usage / + Router's IP addresses in the Free-Radio Network)");
+		b = append_radio(p, "tr_contribute_map", id, value, [["tr_none", "none"], ["tr_basic", "basic"], ["tr_more", "more"], ["tr_all", "all"]]);
+		addHelp(b, "How much data should this node contribute to the node card? (Little: Name / Version / Model / Position / Contact, More: + Uptime / + CPU Usage, All: + Memory Usage / + Router's IP addresses in the Free-Radio Network)");
 		break;
 	case "limit_egress":
 		b = append_input(p, "Freifunk Upload", id, value);
-		addInputCheck(b.lastChild, /^\d+$/, "Upload ist ung\xfcltig.");
-		addHelpText(b, "Maximum upload in kbps for bandwidth control.");
+		addInputCheck(b.lastChild, /^\d+$/, "tr_invalid_input");
+		addHelp(b, "Maximum upload in kbps for bandwidth control.");
 		break;
 	case "limit_ingress":
 		b = append_input(p, "Freifunk Download", id, value);
-		addInputCheck(b.lastChild, /^\d+$/, "Download ist ung\xfcltig.");
-		addHelpText(b, "Maximum download in kbps for bandwidth control.");
+		addInputCheck(b.lastChild, /^\d+$/, "tr_invalid_input");
+		addHelp(b, "Maximum download in kbps for bandwidth control.");
 		break;
 	case "allow_access_from":
 		b = append_check(p, "SSH/HTTPS Zugriff", id, split(value), [["WAN","wan"], ["LAN","lan"], ["Freifunk","freifunk"]]);
-		addHelpText(b, "Allow access to the configuration via various ports / networks.")
+		addHelp(b, "tr_access_help")
 		break;
 	case "service_link":
 		var ula_prefix = uci['network']['globals']['ula_prefix'];
@@ -124,24 +124,24 @@ function appendSetting(p, path, value, mode)
 		b = append_input(p, "Service Link", id, value);
 		b.lastChild.placeholder = "http://["+addr_prefix+":1]/index.html";
 		addInputCheck(b.lastChild, regexp, "Ung\xfcltige Eingabe.");
-		addHelpText(b, "A reference to an _internal_ network resource. For example, \"Http: // [" + addr_prefix + ": 1] /index.html \".");
+		addHelp(b, "A reference to an _internal_ network resource. For example, \"Http: // [" + addr_prefix + ": 1] /index.html \".");
 		break;
 	case "service_label":
 		b = append_input(p, "Service Name", id, value);
 		b.lastChild.placeholder = "MeineWebseite";
 		addInputCheck(b.lastChild, /^$|^[\[\]\(\) \w&\/.:\u0080-\u00FF]{0,32}$/, "Ung\xfcltige Eingabe.");
-		addHelpText(b, "A name of the specified network resource. For example, \"My website\".");
+		addHelp(b, "A name of the specified network resource. For example, \"My website\".");
 		break;
 	case "service_display_max":
 		b = append_input(p, "Max entries", id, value);
 		addInputCheck(b.lastChild, /^\d+$/, "Ung\xfcltige Zahl.");
-		addHelpText(b, "Maximum number of entries displayed on your own status page.");
+		addHelp(b, "Maximum number of entries displayed on your own status page.");
 		break;
 	case "community":
 		b = append_input(p, "Community", id, value);
 		addClass(b, "adv_hide");
 		addInputCheck(b.lastChild, /^[a-z0-9_\-]{3,30}$/, "Ung\xfcltiger Bezeichner.");
-		addHelpText(b, "The identifier of the community to which this node belongs.");
+		addHelp(b, "The identifier of the community to which this node belongs.");
 		break;
 	default:
 		return;

@@ -58,7 +58,7 @@ function replaceItem(str, old_item, new_item)
 	return array.join(' ');
 }
 
-function addHelpText(elem, text) {
+function addHelp(elem, text) {
 	var help = $("help");
 
 	if (help) {
@@ -452,7 +452,7 @@ function _selection(type, parent, title, name, selected, choices)
 		}
 
 		if (choice_help) {
-			addHelpText(label, choice_help);
+			addHelp(label, choice_help);
 		}
 	}
 	return p;

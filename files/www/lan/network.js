@@ -88,19 +88,19 @@ function appendSetting(p, path, value, mode)
 		if (value > 35) channels = [36,40,44,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140];
 		b = append_selection(p, "tr_channel", id, value, channels);
 		addClass(b.lastChild, "adv_disable");
-		addHelpText(b, "The channel on which the wireless card is sending. Please keep in mind that routers can not see if both sides are transmitting on different channels. The first channel is therefore recommended.");
+		addHelp(b, "tr_channel_help" );
 		break;
 	case "txpower":
 		value = value ? value : 'undefined';
 		b = append_selection(p, "Transmission power", id, value, txpower_choices);
-		addHelpText(b, "The transmission power in dBm. Radiation power = transmission power - cable attenuation + antenna gain. \nOther values must be entered manually. Attention! When replacing the antennas, the transmission power must be adjusted accordingly!");
+		addHelp(b, "The transmission power in dBm. Radiation power = transmission power - cable attenuation + antenna gain. \nOther values must be entered manually. Attention! When replacing the antennas, the transmission power must be adjusted accordingly!");
 		addClass(b, "adv_hide");
 		break;
 	case "mode":
 		if (!inArray(mode, ["wan", "none"]))
 			return;
 		b = append_selection(p, "Mode", id, value, [["Client", "sta"],["AccessPoint", "ap"]]);
-		addHelpText(b, "Log into another network (client) or allow other devices to log in (accesspoint).");
+		addHelp(b, "Log into another network (client) or allow other devices to log in (accesspoint).");
 		break;
 	case "encryption":
 		if (!inArray(mode, ["wan", "lan", "none"]))
@@ -140,7 +140,7 @@ function appendSetting(p, path, value, mode)
 		if (path[1] != "freifunk") return;
 		b = append_input(p, "MAC-Address", id, value);
 		addInputCheck(b.lastChild,/^((([0-9a-f]{2}:){5}([0-9a-f]{2}))|)$/, "Ung\xfcltige MAC-Adresse.");
-		addHelpText(b, "The MAC-address identifies the node. If the value is empty, the router will select one itself.");
+		addHelp(b, "The MAC-address identifies the node. If the value is empty, the router will select one itself.");
 		break;
 */
 	case "mesh_on_wan":
@@ -159,7 +159,7 @@ function appendSetting(p, path, value, mode)
 				}
 			}
 		});
-		addHelpText(b, "This feature sends the mesh packets to the network at the WAN port. Please note that these broadcast packages have a negative impact on WAN network WLAN APs.");
+		addHelp(b, "This feature sends the mesh packets to the network at the WAN port. Please note that these broadcast packages have a negative impact on WAN network WLAN APs.");
 		break;
 	case "disabled":
 		b = append_radio(p, "tr_disabled", id, value, [["tr_yes", "1"], ["tr_no", "0"]]);
@@ -236,7 +236,7 @@ function rebuild_assignment()
 	hide(root);
 
 	var fs = append_section(root, "tr_ports");
-	addHelpText(fs, "tr_individual_ports");
+	addHelp(fs, "tr_individual_ports");
 
 	var ignore = ["local-node", "fastd_mesh", "bat0", "lo"];
 	var ifnames = [];
@@ -479,7 +479,7 @@ function rebuild_wifi()
 
 			var state = getWifiInterfaceState(dev, wid);
 			var b = append_label(entry, "Status", state);
-			addHelpText(b, 'tr_wifi_help');
+			addHelp(b, 'tr_wifi_help');
 
 			if (mode == "none") {
 				append_button(entry, 'tr_delete', function() {
@@ -765,7 +765,7 @@ function rebuild_switches()
 {
 	var root = $("switches");
 	removeChilds(root);
-	addHelpText(root, "Configuration of the ports / ports on the router. Please make sure that access to this page is normally only possible via 'LAN' port.");
+	addHelp(root, "Configuration of the ports / ports on the router. Please make sure that access to this page is normally only possible via 'LAN' port.");
 
 	config_foreach(uci.network, "switch", function(sid, sobj) {
 		var swinfo = collect_switch_info(sobj.name);

@@ -47,12 +47,12 @@ function init() {
 		}
 	});
 
-	addHelpText($("system"), "Eine \xdcbersicht \xfcber den Router.");
-	addHelpText($("freifunk"), "Das \xf6ffentliche Freifunknetz..");
-	addHelpText($("lan"), "Das private Netz bzw. LAN.");
-	addHelpText($("wan"), "Das Netz \xfcber dass das Internet erreicht wird.");
-	addHelpText($("software"), "Einige installierte Softwareversionen.");
-	addHelpText($("freifunk_user_count"), "Die Anzahl der Nutzer an diesem Router in den letzten zwei Stunden.");
-	addHelpText($("lan_user_count"), "Die Anzahl der Nutzer an diesem Router in den letzten zwei Stunden.");
-	addHelpText($("vpn_server"), "Der VPN-Server im Internet, mit dem der Knoten verbunden ist.");
+	addHelp($("system"), "Eine \xdcbersicht \xfcber den Router.");
+	addHelp($("freifunk"), "Das \xf6ffentliche Freifunknetz..");
+	addHelp($("lan"), "Das private Netz bzw. LAN.");
+	addHelp($("wan"), "Das Netz \xfcber dass das Internet erreicht wird.");
+	addHelp($("software"), "Einige installierte Softwareversionen.");
+	addHelp($("freifunk_user_count"), "Die Anzahl der Nutzer an diesem Router in den letzten zwei Stunden.");
+	addHelp($("lan_user_count"), "Die Anzahl der Nutzer an diesem Router in den letzten zwei Stunden.");
+	addHelp($("vpn_server"), "Der VPN-Server im Internet, mit dem der Knoten verbunden ist.");
 }
