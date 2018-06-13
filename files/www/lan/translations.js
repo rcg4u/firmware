@@ -64,10 +64,17 @@ var translations = {
 		tr_system_help: 'Device overview.',
 		tr_mesh_help: 'The public community Netzwerk..',
 		tr_lan_help: 'The private LAN network.',
-		tr_wan_help: 'The WAN network to reach the Internet.'
+		tr_wan_help: 'The WAN network to reach the Internet.',
 		tr_software_help: 'Some installed software versions.',
 		tr_user_count_hours_help: 'User of this router during the last two hours.',
 		tr_vpn_help: 'VPN-Server on the Internet, this node is connected to.',
+		tr_bandwidth_control_help: 'Bandwidth control for the upload / download via the free wireless network via your own internet connection.',
+		tr_max_upload_help: 'Maximum upload in kbps for bandwidth control.',
+		tr_max_download_help: 'Maximum download in kbps for bandwidth control.',
+
+		tr_search: 'Search',
+		tr_search_update: 'Search and update',
+		tr_password: 'Password',
 
 		tr_encryption: 'Encryption',
 		tr_transferred: 'Data Transfered'
@@ -136,10 +143,17 @@ var translations = {
 		tr_system_help: 'Eine \xdcbersicht \xfcber den Router.',
 		tr_mesh_help: 'Das \xf6ffentliche Freifunknetz..',
 		tr_lan_help: 'Das private Netz bzw. LAN.',
-		tr_wan_help: 'Das Netz \xfcber dass das Internet erreicht wird.'
+		tr_wan_help: 'Das Netz \xfcber dass das Internet erreicht wird.',
 		tr_software_help: 'Einige installierte Softwareversionen.',
 		tr_user_count_hours_help: 'Die Anzahl der Nutzer an diesem Router in den letzten zwei Stunden.',
 		tr_vpn_help: 'Der VPN-Server im Internet, mit dem der Knoten verbunden ist.',
+		tr_bandwidth_control_help: 'Bandbreitenkontrolle f\xfcr den Upload-/Download \xfcber das Freifunknetz \xfcber den eigenen Internetanschluss.',
+		tr_max_upload_help: 'Maximaler Upload in KBit/s f\xfcr die Bandbreitenkontrolle.',
+		tr_max_download_help: 'Maximaler Download in KBit/s f\xfcr die Bandbreitenkontrolle.',
+
+		tr_search: 'Suchen',
+		tr_search_update: 'Suchen und Aktualisieren',
+		tr_password: 'Passwort',
 
 		tr_encryption: 'Verschl\xfcsselung',
 		tr_transferred: 'Data'
@@ -173,17 +187,8 @@ transmission power',
 'Verschl\xfcsselung'
 'Encryption\xfcsselung'
 
-'Passwort'
-'Password'
-
 'Bitte nur ein Passwort aus mindestens acht sichbaren Zeichen verwenden.'
 'Please use only one password from at least eight visible characters.'
-
-'MAC-Adresse'
-'MAC-Address'
-
-'Ung\xfcltige MAC-Adresse.'
-'Invalid MAC address'
 
 'Die MAC-Adresse identifiziert den Knoten. Bei einem leeren Wert w\xe4hlt der Router selber einen aus.'
 'The MAC-address identifies the node. If the value is empty, the router will select one itself.'
@@ -258,8 +263,6 @@ Kontaktdaten
 contact details
 
 Bandbreitenkontrolle
-Bandbreitenkontrolle f\xfcr den Upload-/Download \xfcber das Freifunknetz \xfcber den eigenen Internetanschluss.
-Bandwidth control for the upload / download via the free wireless network via your own internet connection.
 
 
 Eine VPN-Verbindung zum Server \xfcber WAN aufbauen (per fastd).
@@ -268,13 +271,6 @@ Establish a VPN connection to the server \xvia WAN (via fastd).
 
 Mit wievielen Daten soll dieser Knoten zur Knotenkarte beitragen? (Wenig: Name/Version/Modell/Position/Kontakt, Mehr: +Uptime/+CPU-Auslastung, Alles: +Speicherauslastung/+IP-Adressen des Routers im Freifunk-Netz)
 How much data should this node contribute to the node card? (Little: Name / Version / Model / Position / Contact, More: + Uptime / + CPU Usage, All: + Memory Usage / + Router's IP addresses in the Free-Radio Network)
-
-Maximaler Upload in KBit/s f\xfcr die Bandbreitenkontrolle.
-Maximum upload in kbps for bandwidth control.
-
-
-Maximaler Download in KBit/s f\xfcr die Bandbreitenkontrolle.
-	Maximum download in kbps for bandwidth control.
 
 
 Ein Verweis auf eine _interne_ Netzwerkresource. Z.B. \'http://['+addr_prefix+:1]/index.html\'.
@@ -299,12 +295,6 @@ The identifier of the community to which this node belongs.
 
 Aktuelle Firmware suchen
 Search current firmware
-
-Suchen
-Suchen und Aktualisieren
-
-Search
-Search and update
 
 Die Freifunk-Community bietet neue Firmware-Versionen für die Router an.<br />Diese enthalten Fehlerbereinigungen und neue Funktionen.
 The Freifunk community offers new firmware versions for the routers.<br />These contain bug fixes and new features.

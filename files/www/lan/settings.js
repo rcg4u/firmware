@@ -90,7 +90,7 @@ function appendSetting(p, path, value, mode)
 		}
 		if (cfg == 'simple-tc') {
 			b = append_radio(p, 'tr_bandwidth_ctl', id, value, [['tr_on', '1'], ['tr_off', '0']]);
-			addHelp(b, 'Bandwidth control for the upload / download via the free wireless network via your own internet connection.');
+			addHelp(b, 'tr_bandwidth_control_help');
 		}
 		if (cfg == 'fastd') {
 			b = append_radio(p, 'Fastd VPN', id, value, [['tr_on', '1'], ['tr_off', '0']]);
@@ -105,16 +105,16 @@ function appendSetting(p, path, value, mode)
 	case 'limit_egress':
 		b = append_input(p, 'Freifunk Upload', id, value);
 		addInputCheck(b.lastChild, /^\d+$/, 'tr_invalid_input');
-		addHelp(b, 'Maximum upload in kbps for bandwidth control.');
+		addHelp(b, 'tr_max_upload_help');
 		break;
 	case 'limit_ingress':
 		b = append_input(p, 'Freifunk Download', id, value);
 		addInputCheck(b.lastChild, /^\d+$/, 'tr_invalid_input');
-		addHelp(b, 'Maximum download in kbps for bandwidth control.');
+		addHelp(b, 'tr_max_download_help');
 		break;
 	case 'allow_access_from':
 		b = append_check(p, 'SSH/HTTPS Zugriff', id, split(value), [['WAN','wan'], ['LAN','lan'], ['Freifunk','freifunk']]);
-		addHelp(b, 'tr_access_help')
+		addHelp(b, 'tr_access_help');
 		break;
 	case 'service_link':
 		var ula_prefix = uci['network']['globals']['ula_prefix'];

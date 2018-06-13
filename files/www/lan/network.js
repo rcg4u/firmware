@@ -138,8 +138,8 @@ function appendSetting(p, path, value, mode)
 /*
 	case 'macaddr':
 		if (path[1] != 'freifunk') return;
-		b = append_input(p, 'MAC-Address', id, value);
-		addInputCheck(b.lastChild,/^((([0-9a-f]{2}:){5}([0-9a-f]{2}))|)$/, 'Ung\xfcltige MAC-Adresse.');
+		b = append_input(p, 'tr_mac_address', id, value);
+		addInputCheck(b.lastChild,/^((([0-9a-f]{2}:){5}([0-9a-f]{2}))|)$/, 'tr_invalid_mac');
 		addHelp(b, 'The MAC-address identifies the node. If the value is empty, the router will select one itself.');
 		break;
 */
@@ -457,7 +457,7 @@ function rebuild_wifi()
 
 	// Print wireless sections.
 	config_foreach(uci.wireless, 'wifi-device', function(dev, obj) {
-		var fs = append_section(root, 'Wireless ''+dev+''', dev);
+		var fs = append_section(root, 'Wireless \''+dev+'\'', dev);
 		var info = collect_wifi_info(dev);
 
 		for (var sid in obj)
@@ -471,7 +471,7 @@ function rebuild_wifi()
 			if (wobj.device != dev) return;
 
 			var mode = getWifiMode(wid);
-			var title = (mode == 'none') ? '''+wobj.network+''' : modeName(mode);
+			var title = (mode == 'none') ? '\''+wobj.network+'\'' : modeName(mode);
 			var entry = append_section(parent, title, 'wireless_'+dev+'_'+mode);
 
 			for (var opt in wobj)
@@ -765,7 +765,7 @@ function rebuild_switches()
 {
 	var root = $('switches');
 	removeChilds(root);
-	addHelp(root, 'Configuration of the ports / ports on the router. Please make sure that access to this page is normally only possible via 'LAN' port.');
+	addHelp(root, 'Configuration of the ports / ports on the router. Please make sure that access to this page is normally only possible via \'LAN\' port.');
 
 	config_foreach(uci.network, 'switch', function(sid, sobj) {
 		var swinfo = collect_switch_info(sobj.name);
