@@ -80,13 +80,13 @@ function appendSetting(p, path, value, mode)
 	switch (name)
 	{
 	case "country":
-		b = append_input(p, "tr-country", id, value);
+		b = append_input(p, "tr_country", id, value);
 		addClass(b.lastChild, "adv_disable");
 		break;
 	case "channel":
 		var channels = [1,2,3,4,5,6,7,8,9,10,11,12];
 		if (value > 35) channels = [36,40,44,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140];
-		b = append_selection(p, "tr-channel", id, value, channels);
+		b = append_selection(p, "tr_channel", id, value, channels);
 		addClass(b.lastChild, "adv_disable");
 		addHelpText(b, "The channel on which the wireless card is sending. Please keep in mind that routers can not see if both sides are transmitting on different channels. The first channel is therefore recommended.");
 		break;
@@ -144,7 +144,7 @@ function appendSetting(p, path, value, mode)
 		break;
 */
 	case "mesh_on_wan":
-		b = append_radio(p, "Mesh-On-WAN", id, value, [["tr-yes", "1"], ["tr-no", "0"]]);
+		b = append_radio(p, "Mesh-On-WAN", id, value, [["tr_yes", "1"], ["tr_no", "0"]]);
 		onDesc(b, "INPUT", function(e) {
 			e.onclick = function(e) {
 				var src = (e.target || e.srcElement);
@@ -162,7 +162,7 @@ function appendSetting(p, path, value, mode)
 		addHelpText(b, "This feature sends the mesh packets to the network at the WAN port. Please note that these broadcast packages have a negative impact on WAN network WLAN APs.");
 		break;
 	case "disabled":
-		b = append_radio(p, "tr-disabled", id, value, [["tr-yes", "1"], ["tr-no", "0"]]);
+		b = append_radio(p, "tr_disabled", id, value, [["tr_yes", "1"], ["tr_no", "0"]]);
 		break;
 	default:
 		return;
@@ -213,7 +213,7 @@ function rebuild_other()
 	removeChilds(root);
 	hide(root);
 
-	var fs = append_section(root, "Sonstiges");
+	var fs = append_section(root, "tr_other");
 
 	if ('network' in uci) {
 		var n = uci['network'];
@@ -235,8 +235,8 @@ function rebuild_assignment()
 	removeChilds(root);
 	hide(root);
 
-	var fs = append_section(root, "Anschl\xfcsse");
-	addHelpText(fs, "Individual ports of the router that are not identified as part of the switch or WLAN.");
+	var fs = append_section(root, "tr_ports");
+	addHelpText(fs, "tr_individual_ports");
 
 	var ignore = ["local-node", "fastd_mesh", "bat0", "lo"];
 	var ifnames = [];
@@ -412,7 +412,7 @@ function getWifiInterfaceState(dev, wid)  {
 	var obj = wifi_status[dev];
 
 	if (!obj.up) {
-		return "Inactive";
+		return "tr_inactive";
 	}
 
 	var interfaces = obj['interfaces'];
@@ -422,7 +422,7 @@ function getWifiInterfaceState(dev, wid)  {
 			return ('ifname' in e) ? "active" : "error";
 		}
 	}
-	return "Unbekannt";
+	return "tr_unknown";
 }
 
 function countWifi(mode, wmode) {
@@ -463,7 +463,7 @@ function rebuild_wifi()
 		for (var sid in obj)
 			appendSetting(fs, ['wireless', dev, sid], obj[sid]);
 
-		var mode_checks = append_check(fs, "Mode", dev+"_mode", info.modes, [["LAN","lan", "tr-lan-help"], ["Freifunk","freifunk", "tr-freifunk_help"], ["Mesh", "mesh", "tr-mesh_help"], ["WAN", "wan", "tr-wan_help"]]);
+		var mode_checks = append_check(fs, "Mode", dev+"_mode", info.modes, [["LAN","lan", "tr_lan_help"], ["Freifunk","freifunk", "tr_freifunk_help"], ["Mesh", "mesh", "tr_mesh_help"], ["WAN", "wan", "tr_wan_help"]]);
 		var parent = append(fs, "div");
 
 		// Print wireless interfaces.
@@ -479,10 +479,10 @@ function rebuild_wifi()
 
 			var state = getWifiInterfaceState(dev, wid);
 			var b = append_label(entry, "Status", state);
-			addHelpText(b, "Does the interface work? For example, some wireless drivers may not be able to access point and mesh at the same time.");
+			addHelpText(b, 'tr_wifi_help');
 
 			if (mode == "none") {
-				append_button(entry, "L\xf6schen", function() {
+				append_button(entry, 'tr_delete', function() {
 					delWifiSection(dev, mode);
 					rebuild_wifi();
 					adv_apply();

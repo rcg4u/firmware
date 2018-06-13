@@ -67,7 +67,7 @@ function addHelpText(elem, text) {
 			help.style.left = (e.clientX+80)+"px";
 			help.textContent = text;
 
-			if (text.startsWith("tr-")) {
+			if (text.startsWith("tr_")) {
 				help.classList.add(text);
 			}
 
@@ -342,7 +342,7 @@ function append_options(parent, name, selected, choices)
 		option.selected = (choice_value == selected) ? "selected" : "";
 		option.textContent= choice_text;
 
-		if (choice_text.startsWith("tr-")) {
+		if (choice_text.startsWith("tr_")) {
 			option.classList.add(choice_text);
 		}
 	}
@@ -357,7 +357,7 @@ function append_selection(parent, title, name, selected, choices)
 	p.className = "select_option";
 	label.textContent = title + ":";
 
-	if (title.startsWith("tr-")) {
+	if (title.startsWith("tr_")) {
 			label.classList.add(title);
 	}
 
@@ -373,7 +373,7 @@ function append_input(parent, title, name, value)
 	var label = append(div, 'label');
 	var input = append(div, 'input');
 
-	if (title.startsWith("tr-")) {
+	if (title.startsWith("tr_")) {
 		label.classList.add(title);
 	}
 
@@ -406,7 +406,7 @@ function _selection(type, parent, title, name, selected, choices)
 	p.className = "radio_option";
 	label.textContent = title + ":";
 
-	if (title.startsWith("tr-")) {
+	if (title.startsWith("tr_")) {
 		label.classList.add(title);
 	}
 
@@ -431,7 +431,7 @@ function _selection(type, parent, title, name, selected, choices)
 
 		label.textContent = choice_text;
 
-		if (choice_text.startsWith("tr-")) {
+		if (choice_text.startsWith("tr_")) {
 			label.classList.add(choice_text);
 		}
 

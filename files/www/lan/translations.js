@@ -1,84 +1,100 @@
 
 var translations = {
-	en : {
-		tr-home: 'Home',
-		tr-settings: 'Settings',
-		tr-network: 'Network',
-		tr-wifi-scan: 'WLAN-Scan',
-		tr-upgrade: 'Upgrade',
-		tr-password: 'Password',
-		tr-restart: 'Restart',
-		tr-logout: 'Logout',
-		tr-extended-on: 'Extended: On',
-		tr-extended-off: 'Extended: Off',
-		tr-general-settings: 'General Settings',
-		tr-announce: 'Announce contents',
-		tr-bandwidth-ctl: 'Bandwidth Control',
-		tr-bandwidth-help: 'The internet bandwidth on the WAN used for the free-wireless network can be limited here.',
-		tr-save: 'Save',
+	en: {
+		tr_home: 'Home',
+		tr_settings: 'Settings',
+		tr_network: 'Network',
+		tr_wifi_scan: 'WLAN-Scan',
+		tr_upgrade: 'Upgrade',
+		tr_password: 'Password',
+		tr_restart: 'Restart',
+		tr_logout: 'Logout',
+		tr_extended_on: 'Extended: On',
+		tr_extended_off: 'Extended: Off',
+		tr_general_settings: 'General Settings',
+		tr_announce: 'Announce contents',
+		tr_bandwidth_ctl: 'Bandwidth Control',
+		tr_bandwidth_help: 'The internet bandwidth on the WAN used for the free-wireless network can be limited here.',
+		tr_save: 'Save',
 
-		tr-yes: 'Yes',
-		tr-no: 'No',
-		tr-disabled: 'Disabled',
-		tr-on: 'An',
-		tr-off: 'Aus',
+		tr_yes: 'Yes',
+		tr_no: 'No',
+		tr_disabled: 'Disabled',
+		tr_on: 'An',
+		tr_off: 'Aus',
 
-		tr-none: 'None',
-		tr-basic: 'Basic',
-		tr-more: 'More',
-		tr-all: 'All',
+		tr_none: 'None',
+		tr_basic: 'Basic',
+		tr_more: 'More',
+		tr_all: 'All',
 
-		tr-lan-help: 'LAN: Enables a private, password-protected Wi-Fi network with access to its own Internet connection.',
-		tr-freifunk-help: 'Freifunk: The WLAN access to the free-wireless network.',
-		tr-mesh-help: 'Mesh: The Wi-Fi network which the routers communicate with each other',
-		tr-wan-help: 'WAN: Enables Internet access from another, traditional router.',
-    tr-country: 'Country',
-    tr-channel: 'Channel',
+		tr_lan_help: 'LAN: Enables a private, password-protected Wi-Fi network with access to its own Internet connection.',
+		tr_freifunk_help: 'Freifunk: The WLAN access to the free-wireless network.',
+		tr_mesh_help: 'Mesh: The Wi-Fi network which the routers communicate with each other',
+		tr_wan_help: 'WAN: Enables Internet access from another, traditional router.',
+		tr_country: 'Country',
+		tr_channel: 'Channel',
+		tr_inactive: 'Inactive',
+		tr_unknown: 'Unknown',
 
-		tr-transferred: 'Data Transfered'
+		tr_individual-ports: 'Individual ports of the router that are not identified as part of the switch or WLAN.',
+		tr_ports: 'Ports',
+		tr_other: 'Other',
+		tr_delete: 'Delete',
+		tr_wifi_help: 'Does the interface work? For example, some wireless drivers may not be able to access point and mesh at the same time.',
+
+		tr_transferred: 'Data Transfered'
 	},
 	de: {
-		tr-home: 'Home',
-		tr-settings: 'Settings',
-		tr-network: 'Netzwerk',
-		tr-wifi-scan: 'WLAN-Scan',
-		tr-upgrade: 'Upgrade',
-		tr-password: 'Passwort',
-		tr-restart: 'Neustart',
-		tr-logout: 'Logout',
-		tr-extended-on: 'Extended: An',
-		tr-extended-off: 'Extended: Aus',
-		tr-general-settings: 'Allgemeine Einstellungen',
-		tr-announce: 'Inhalte verkünden',
-		tr-bandwidth-ctl: 'Bandbreitenkontrolle',
-		tr-bandwidth-help: 'Jeder Router kann einen Eintrag auf der Statusseite aller anderen Router anzeigen lassen. Dies soll helfen, Inhalte im Freifunknetz zu finden.',
-		tr-save: 'Speichern',
+		tr_home: 'Home',
+		tr_settings: 'Settings',
+		tr_network: 'Netzwerk',
+		tr_wifi_scan: 'WLAN-Scan',
+		tr_upgrade: 'Upgrade',
+		tr_password: 'Passwort',
+		tr_restart: 'Neustart',
+		tr_logout: 'Logout',
+		tr_extended_on: 'Extended: An',
+		tr_extended_off: 'Extended: Aus',
+		tr_general_settings: 'Allgemeine Einstellungen',
+		tr_announce: 'Inhalte verkünden',
+		tr_bandwidth_ctl: 'Bandbreitenkontrolle',
+		tr_bandwidth_help: 'Jeder Router kann einen Eintrag auf der Statusseite aller anderen Router anzeigen lassen. Dies soll helfen, Inhalte im Freifunknetz zu finden.',
+		tr_save: 'Speichern',
 
-		tr-yes: 'Ja',
-		tr-no: 'Nein',
-		tr-disabled: 'Deaktiviert',
-		tr-on: 'An',
-		tr-off: 'Aus',
+		tr_yes: 'Ja',
+		tr_no: 'Nein',
+		tr_disabled: 'Deaktiviert',
+		tr_on: 'An',
+		tr_off: 'Aus',
 
-		tr-none: 'Nichts',
-		tr-basic: 'Basic',
-		tr-more: 'Mehr',
-		tr-all: 'Alles',
+		tr_none: 'Nichts',
+		tr_basic: 'Basic',
+		tr_more: 'Mehr',
+		tr_all: 'Alles',
 
-		tr-lan-help: 'LAN: Aktiviert ein privates, passwortgesch\xfctztes WLAN-Netz mit Zugang zum eigenen Internetanschluss.',
-		tr-freifunk-help: 'Freifunk: Der WLAN-Zugang zum Freifunk-Netz.',
-		tr-mesh-help: 'Mesh: Das WLAN-Netz \xfcber das die Router untereinander kommunizieren.',
-		tr-wan-help: 'WAN: Erm\xf6glicht den Internetzugang eines anderen, herk\xf6mmlichen Routers zu nutzen.',
-    tr-country: 'Land',
-    tr-channel: 'Kanal',
+		tr_lan_help: 'LAN: Aktiviert ein privates, passwortgesch\xfctztes WLAN-Netz mit Zugang zum eigenen Internetanschluss.',
+		tr_freifunk_help: 'Freifunk: Der WLAN-Zugang zum Freifunk-Netz.',
+		tr_mesh_help: 'Mesh: Das WLAN-Netz \xfcber das die Router untereinander kommunizieren.',
+		tr_wan_help: 'WAN: Erm\xf6glicht den Internetzugang eines anderen, herk\xf6mmlichen Routers zu nutzen.',
+		tr_country: 'Land',
+		tr_channel: 'Kanal',
+		tr_inactive: 'Inaktiv',
+		tr_unknown: 'Unbekannt',
 
-		tr-transferred: 'Data'
+		tr_individual_ports: 'Einzelne Anschl\xfcsse des Router die nicht als Teil des Switches oder WLANS zu identifizieren sind.',
+		tr_ports: 'Anschl\xfcsse',
+		tr_other: 'Sonstiges',
+		tr_delete: 'L\xf6schen',
+		tr_wifi_help: 'Funktioniert der Anschluss? Manche WLAN-Treiber k\xf6nnen z.B kein AccessPoint und Mesh gleichzeitig.',
+
+		tr_transferred: 'Data'
 	}
 }
 
 /*
-		tr-neighbornode: 'Nachbarknoten', Neighboring nodes
-		tr-allnodes: 'Lokale Clients', Local clients
+		tr_neighbornode: 'Nachbarknoten', Neighboring nodes
+		tr_allnodes: 'Lokale Clients', Local clients
 		'Extended An'
 		'Extended: Aus'
 
@@ -134,9 +150,6 @@ transmission power',
 
 'Deaktiviert'
 'Disabled'
-
-'Einzelne Anschl\xfcsse des Router die nicht als Teil des Switches oder WLANS zu identifizieren sind.'
-'Individual ports of the router that are not identified as part of the switch or WLAN.'
 
 'Inaktiv'
 'Inactive'

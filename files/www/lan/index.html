@@ -28,12 +28,12 @@ function adv_apply()
 }
 
 /*
- * Translate all texts in a node or a tr-* string.
+ * Translate all texts in a node or a tr_* string.
  */
 function tr(e)
 {
 	if (typeof e === 'string') {
-		// e is a string (tr-*)
+		// e is a string (tr_*)
 		var fmt = translations[language][e];
 		if (!fmt)
 			return e;
@@ -50,7 +50,7 @@ function tr(e)
 
 		return out + parts[parts.length - 1];
 	} else {
-		// iterate all translation tokens (tr-*)
+		// iterate all translation tokens (tr_*)
 		var mapping = translations[language];
 		for (var id in mapping) {
 			var elements = e.getElementsByClassName(id);
@@ -74,7 +74,7 @@ function tr(elem) {
 			if (node.nodeName === "SCRIPT")
 				continue;
 
-			if (type == 3 && node.textContent.startsWith("tr-")) {
+			if (type == 3 && node.textContent.startsWith("tr_")) {
 				console.log("'" + node.textContent + "'");
 				node.textContent = tr(node.textContent);
 				//console.log("'" + node.textContent + "'");
@@ -89,8 +89,8 @@ function adv_toggle(e)
 {
 	adv_mode = !adv_mode;
 
-	e.classList.toggle('tr-extended-on', adv_mode);
-	e.classList.toggle('tr-extended-off', !adv_mode);
+	e.classList.toggle('tr_extended_on', adv_mode);
+	e.classList.toggle('tr_extended_off', !adv_mode);
 
 	tr(e.parentNode);
 
@@ -184,15 +184,15 @@ function logout() {
 </noscript>
 
 <ul id="globalnav">
-	<li><a href="home.html" id="first" class="tr-home">Home</a></li>
-	<li><a href="settings.html" class="tr-settings">Settings</a></li>
-	<li><a href="network.html" class="tr-network">Network</a></li>
-	<li><a href="wifiscan.html" class="tr-wifi-scan">WLAN-Scan</a></li>
-	<li><a href="upgrade.html" class="tr-upgrade">Upgrade</a></li>
-	<li><a href="password.html" class="tr-password">Password</a></li>
-	<li><a href="#" onclick="reboot()" class="tr-restart">Restart</a></li>
-	<li><a href="#" onclick="logout()" class="tr-logout">Logout</a></li>
-	<li><a href="#" onclick="adv_toggle(this)" class="tr-extended-off">Extended: Off</a></li>
+	<li><a href="home.html" id="first" class="tr_home">Home</a></li>
+	<li><a href="settings.html" class="tr_settings">Settings</a></li>
+	<li><a href="network.html" class="tr_network">Network</a></li>
+	<li><a href="wifiscan.html" class="tr_wifi_scan">WLAN-Scan</a></li>
+	<li><a href="upgrade.html" class="tr_upgrade">Upgrade</a></li>
+	<li><a href="password.html" class="tr_password">Password</a></li>
+	<li><a href="#" onclick="reboot()" class="tr_restart">Restart</a></li>
+	<li><a href="#" onclick="logout()" class="tr_logout">Logout</a></li>
+	<li><a href="#" onclick="adv_toggle(this)" class="tr_extended_off">Extended: Off</a></li>
 	<li><a href="#">
 		<select onchange="language = this.value; tr(document.body);">
 			<option value="de" selected="selected">DE</option>

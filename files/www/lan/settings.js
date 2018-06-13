@@ -99,7 +99,7 @@ function appendSetting(p, path, value, mode)
 		}
 		break;
 	case "publish_map":
-		b = append_radio(p, "Contribute to the card", id, value, [["tr-none", "none"], ["tr-basic", "basic"], ["tr-more", "more"], ["tr-all", "all"]]);
+		b = append_radio(p, "Contribute to the card", id, value, [["tr_none", "none"], ["tr_basic", "basic"], ["tr_more", "more"], ["tr_all", "all"]]);
 		addHelpText(b, "How much data should this node contribute to the node card? (Little: Name / Version / Model / Position / Contact, More: + Uptime / + CPU Usage, All: + Memory Usage / + Router's IP addresses in the Free-Radio Network)");
 		break;
 	case "limit_egress":
