@@ -109,6 +109,10 @@ input {
 	-khtml-border-radius: 0.4em;
 }
 
+input[type='radio'] {
+	margin-right: 0.2em;
+}
+
 input:hover, input:focus {
 	border-color: #c5c5c5;
 	background: #f6f6f6;

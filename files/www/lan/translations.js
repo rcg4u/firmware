@@ -1,10 +1,347 @@
 
 var translations = {
-  'de': {
-    'tr-home': 'Home'
-  },
-  'en' : {
-    'tr-home': 'Hoomme'
-  }
+	en : {
+		tr-home: 'Home',
+		tr-settings: 'Settings',
+		tr-network: 'Network',
+		tr-wifi-scan: 'WLAN-Scan',
+		tr-upgrade: 'Upgrade',
+		tr-password: 'Password',
+		tr-restart: 'Restart',
+		tr-logout: 'Logout',
+		tr-extended-on: 'Extended: On',
+		tr-extended-off: 'Extended: Off',
+		tr-general-settings: 'General Settings',
+		tr-announce: 'Announce contents',
+		tr-bandwidth-ctl: 'Bandwidth Control',
+		tr-bandwidth-help: 'The internet bandwidth on the WAN used for the free-wireless network can be limited here.',
+		tr-save: 'Save',
+
+		tr-yes: 'Yes',
+		tr-no: 'No',
+		tr-disabled: 'Disabled',
+		tr-on: 'An',
+		tr-off: 'Aus',
+
+		tr-none: 'None',
+		tr-basic: 'Basic',
+		tr-more: 'More',
+		tr-all: 'All',
+
+		tr-lan-help: 'LAN: Enables a private, password-protected Wi-Fi network with access to its own Internet connection.',
+		tr-freifunk-help: 'Freifunk: The WLAN access to the free-wireless network.',
+		tr-mesh-help: 'Mesh: The Wi-Fi network which the routers communicate with each other',
+		tr-wan-help: 'WAN: Enables Internet access from another, traditional router.',
+    tr-country: 'Country',
+    tr-channel: 'Channel',
+
+		tr-transferred: 'Data Transfered'
+	},
+	de: {
+		tr-home: 'Home',
+		tr-settings: 'Settings',
+		tr-network: 'Netzwerk',
+		tr-wifi-scan: 'WLAN-Scan',
+		tr-upgrade: 'Upgrade',
+		tr-password: 'Passwort',
+		tr-restart: 'Neustart',
+		tr-logout: 'Logout',
+		tr-extended-on: 'Extended: An',
+		tr-extended-off: 'Extended: Aus',
+		tr-general-settings: 'Allgemeine Einstellungen',
+		tr-announce: 'Inhalte verkünden',
+		tr-bandwidth-ctl: 'Bandbreitenkontrolle',
+		tr-bandwidth-help: 'Jeder Router kann einen Eintrag auf der Statusseite aller anderen Router anzeigen lassen. Dies soll helfen, Inhalte im Freifunknetz zu finden.',
+		tr-save: 'Speichern',
+
+		tr-yes: 'Ja',
+		tr-no: 'Nein',
+		tr-disabled: 'Deaktiviert',
+		tr-on: 'An',
+		tr-off: 'Aus',
+
+		tr-none: 'Nichts',
+		tr-basic: 'Basic',
+		tr-more: 'Mehr',
+		tr-all: 'Alles',
+
+		tr-lan-help: 'LAN: Aktiviert ein privates, passwortgesch\xfctztes WLAN-Netz mit Zugang zum eigenen Internetanschluss.',
+		tr-freifunk-help: 'Freifunk: Der WLAN-Zugang zum Freifunk-Netz.',
+		tr-mesh-help: 'Mesh: Das WLAN-Netz \xfcber das die Router untereinander kommunizieren.',
+		tr-wan-help: 'WAN: Erm\xf6glicht den Internetzugang eines anderen, herk\xf6mmlichen Routers zu nutzen.',
+    tr-country: 'Land',
+    tr-channel: 'Kanal',
+
+		tr-transferred: 'Data'
+	}
 }
 
+/*
+		tr-neighbornode: 'Nachbarknoten', Neighboring nodes
+		tr-allnodes: 'Lokale Clients', Local clients
+		'Extended An'
+		'Extended: Aus'
+
+'Land'
+'Country'
+
+'Kanal'
+'Channel'
+
+'Der Kanal auf dem die WLAN-Karte sendet. Bitte denk daran, dass sich Router nicht sehen k\xf6nnen wenn beide Seiten auf unterschiedlichen Kan\xe4len funken. Der erste Kanal ist daher zu empfehlen.'
+'The channel on which the wireless card is sending. Please keep in mind that routers can not see if both sides are transmitting on different channels. The first channel is therefore recommended.'
+
+'Sendeleistung',
+transmission power',
+'Die Sendeleistung in dBm. Strahlungsleistung = Sendeleistung - Kabeld\xe4mpfung + Antennengewinn.\nAndere Werte m\xfcssen manuell eingetragen werden. Achtung! Beim Tausch der Antennen muss die Sendeleistung entsprechend angepasst werden!'
+'The transmission power in dBm. Radiation power = transmission power - cable attenuation + antenna gain. \nOther values must be entered manually. Attention! When replacing the antennas, the transmission power must be adjusted accordingly!'		
+
+'Funktioniert das Interface? Manche WLAN-Treiber k\xf6nnen z.B kein AccessPoint und Mesh gleichzeitig.'
+'Does the interface work? For example, some wireless drivers may not be able to access point and mesh at the same time.'
+
+'Diese Betriebsweise wird von diesem Chipsatz nicht unterst\xfctzt!'
+'This mode of operation is not supported by this chipset!'
+
+'Keine Port-Konfiguration m\xf6glich'
+'No port configuration possible.'
+
+'Modus'
+'Mode'
+
+'In einem anderen Netz anmelden (Client) oder das Anmelden anderer Ger\xe4te zulassen (AccessPoint).'
+'Log into another network (client) or allow other devices to log in (accesspoint).'
+
+'Verschl\xfcsselung'
+'Encryption\xfcsselung'
+
+'Passwort'
+'Password'
+
+'Bitte nur ein Passwort aus mindestens acht sichbaren Zeichen verwenden.'
+'Please use only one password from at least eight visible characters.'
+
+'MAC-Adresse'
+'MAC-Address'
+
+'Ung\xfcltige MAC-Adresse.'
+'Invalid MAC address'
+
+'Die MAC-Adresse identifiziert den Knoten. Bei einem leeren Wert w\xe4hlt der Router selber einen aus.'
+'The MAC-address identifies the node. If the value is empty, the router will select one itself.'
+
+'Diese Funktion schickt die Mesh-Pakete auf das Netz am WAN-Anschluss. Bitte beachten, dass diese Broadcast-Pakete im WAN-Netz befindliche WLAN APs negativ beeinflusst.'
+'This feature sends the mesh packets to the network at the WAN port. Please note that these broadcast packages have a negative impact on WAN network WLAN APs.'
+
+'Deaktiviert'
+'Disabled'
+
+'Einzelne Anschl\xfcsse des Router die nicht als Teil des Switches oder WLANS zu identifizieren sind.'
+'Individual ports of the router that are not identified as part of the switch or WLAN.'
+
+'Inaktiv'
+'Inactive'
+
+'Fehler'
+'error'
+
+'Aktiv'
+'active'
+
+'Konfiguration der Anschl\xfcsse/Ports am Router. Bitte darauf achten, dass der Zugang auf diese Seite normalerweise nur \xfcber auf \'LAN\' gestellte Anschl\xfcsse m\xf6glich ist.'
+'Configuration of the ports / ports on the router. Please make sure that access to this page is normally only possible via \'LAN\' port.'
+
+'Keine Port-Konfiguration m\xf6glich.'
+'No port configuration possible.'
+
+'WAN \xfcber WLAN funktioniert nur wenn dieser als einziger Anschluss f\xfcr WAN verwendet wird! Bitte korrigieren.'
+'WAN over WLAN works only if this is used as only connection for WAN! Please correct.'
+
+Neues Passwort:
+New Password:
+
+Bestätigung:
+Confirm Password:
+
+Das Passwort sichert den Zugriff auf diese Weboberfläche ab, sowie den Direktzugriff auf den Router via <a href='https://de.wikipedia.org/wiki/Secure_Shell'>SSH</a>. Der Benutzername lautet 'root'.</div>
+The password secures access to this web interface, as well as direct access to the router via <a href='https://de.wikipedia.org/wiki/Secure_Shell'>SSH</a>. The username is 'root'.</div>
+
+&Auml;ndern
+Save changes
+
+Die Passw&ouml;rter sind nicht identisch.
+The passwords are not identical.
+
+Das Passwort wird ge&auml;ndert. Bitte die Seite neu laden.
+The password will be changed. Please reload the page.
+
+Einstellungen
+Settings
+
+Allgemeine Einstellungen
+General Settings
+
+Inhalte verkünden
+Announce contents
+
+Jeder Router kann einen Eintrag auf der Statusseite aller anderen Router anzeigen lassen. Dies soll helfen, Inhalte im Freifunknetz zu finden.
+Each router can display an entry on the status page of all other routers. This should help to find content in the free radio network.
+
+Bandbreitenkontrolle
+Bandwidth Control
+
+Die für das Freifunknetz beanspruchte Internet-Bandbreite am WAN kann hier begrenzt werden.
+The internet bandwidth on the WAN used for the free-wireless network can be limited here.
+ 
+Speichern
+Save
+
+Breitengrad
+Latitude
+
+Ung\xfcltige Eingabe. Bitte nur maximal 8 Nachkommastellen, keine Kommas und f\xfchrende Nullen verwenden.
+Invalid input. Please use only up to 8 fractional digits, no commas or preceding zeros.
+
+GPS-Koordinate dieses Knotens auf der Freifunk-Karte.
+GPS coordinate of this node on the free-radio card.
+
+longitude
+L\xe4ngengrad
+
+Knotenname
+node name
+
+MeinRouter
+MyRouter
+
+Ung\xfcltige Eingabe
+Invalid input
+
+Der Name dieses Knotens auf der Freifunk-Karte.
+The name of this node on the free-radio card.
+
+Kontaktdaten
+contact details
+
+Kontaktdaten f\xfcr die \xf6ffentliche Freifunk-Karte und Statusseite. Falls ihr euch von anderen Leuten kontaktieren lassen wollt (z.B. \'info@example.com\').
+	Contact details for the public free-radio card and status page. If you want to be contacted by other people (for example, \ 'info@example.com \').');
+	
+	Community-Webseite
+	Community Site
+
+Webseite der Community, zu der dieser Knoten geh\xf6rt.
+Website of the community this node belongs to.
+
+Der Autoupdater aktualisiert die Firmware automatisch auf die neuste Version.
+The Autoupdater automatically updates the firmware to the latest version.
+
+Bandbreitenkontrolle
+Bandbreitenkontrolle f\xfcr den Upload-/Download \xfcber das Freifunknetz \xfcber den eigenen Internetanschluss.
+Bandwidth control for the upload / download via the free wireless network via your own internet connection.
+
+
+Eine VPN-Verbindung zum Server \xfcber WAN aufbauen (per fastd).
+Establish a VPN connection to the server \xvia WAN (via fastd).
+
+
+Zur Karte beitragen
+Contribute to map.
+
+Mit wievielen Daten soll dieser Knoten zur Knotenkarte beitragen? (Wenig: Name/Version/Modell/Position/Kontakt, Mehr: +Uptime/+CPU-Auslastung, Alles: +Speicherauslastung/+IP-Adressen des Routers im Freifunk-Netz)
+How much data should this node contribute to the node card? (Little: Name / Version / Model / Position / Contact, More: + Uptime / + CPU Usage, All: + Memory Usage / + Router's IP addresses in the Free-Radio Network)
+
+Maximaler Upload in KBit/s f\xfcr die Bandbreitenkontrolle.
+Maximum upload in kbps for bandwidth control.
+
+
+Maximaler Download in KBit/s f\xfcr die Bandbreitenkontrolle.
+	Maximum download in kbps for bandwidth control.
+
+
+	Zugang zur Konfiguration \xfcber verschiedene Anschl\xfcsse/Netzwerke erm\xf6glichen.
+	Allow access to the configuration via various ports / networks.
+
+
+Ein Verweis auf eine _interne_ Netzwerkresource. Z.B. \'http://['+addr_prefix+:1]/index.html\'.
+A reference to an _internal_ network resource. For example, \ 'Http: // [' + addr_prefix + : 1] /index.html \'.
+
+Ein Name der angegebenen Netzwerkresource. Z.B. \'Meine Webseite\'.
+A name of the specified network resource. For example, \'My website\'.
+
+
+Max.-Eintr\xe4ge
+Max entries
+
+Ung\xfcltige Zahl.
+Invalid Number
+
+Maximale Anzahl der auf der eigenen Statusseite angezeigten Eintr\xe4ge.
+Maximum number of entries displayed on your own status page.
+
+
+Der Bezeichner der Community, zu der dieser Knoten geh\xf6rt.
+The identifier of the community to which this node belongs.
+
+Aktuelle Firmware suchen
+Search current firmware
+
+Suchen
+Suchen und Aktualisieren
+
+Search
+Search and update
+
+Die Freifunk-Community bietet neue Firmware-Versionen für die Router an.<br />Diese enthalten Fehlerbereinigungen und neue Funktionen.
+The Freifunk community offers new firmware versions for the routers.<br />These contain bug fixes and new features.
+
+Router Zurücksetzen
+Reset the router
+
+Zurücksetzen
+Reset to default
+
+Alle Einstellungen werden zurückgesetzt und der Router startet neu.
+All settings will reset and the router will restart.
+
+Manuelles Update
+Manual update
+
+Senden
+Send
+
+Image Ausw&auml;hlen
+Select image
+
+Konfiguration beibehalten
+Maintain configuration
+
+Hier kann ein Freifunk-Image verwendet werden (*-sysupgrade.bin) oder die Firmware des Routerherstellers.
+Here a free-wireless image can be used (* -sysupgrade.bin) or the firmware of the router manufacturer.
+
+Sollen alle Einstellungen zur\xFCckgesetzt werden?
+Should all settings be reset?
+
+Versuche Updateserver zu erreichen. Bitte warten ...
+Attempts to reach update servers. Please wait ...
+
+
+Soll ein Update durchgef\xFChrt werden?
+Should an update be carried out?
+
+Versuche Updateserver zu erreichen. Bitte warten ...
+Attempts to reach update servers. Please wait ...
+
+Scan starten
+Start Scan
+
+BSS
+BSS-ID
+
+Signal
+Signal
+
+Typ
+Type
+
+	}
+}
+*/

@@ -11,7 +11,9 @@
 <script type="text/javascript">
 var html_cache = {};
 var js_cache = {};
+var language = "de";
 var adv_mode = false;
+
 
 function adv_apply()
 {
@@ -20,29 +22,78 @@ function adv_apply()
 
 	for (var i = 0; i < inputs.length; i++)
 		inputs[i].disabled = adv_mode ? "": "disabled";
+
 	for (var i = 0; i < elems.length; i++)
 		elems[i].style.display = adv_mode ? "block" : "none";
 }
 
-// Apply translation
-function i18n_translate_site()
+/*
+ * Translate all texts in a node or a tr-* string.
+ */
+function tr(e)
 {
-  var select = document.getElementById("i18n_language");
-  var mapping = translations[select.value];
-  for (var id in mapping) {
-    var elements = document.getElementsByClassName(id);
-    for (var i in elements) {
-      if (elements.hasOwnProperty(i)) {
-        elements[i].innerText = mapping[id];
-      }
-    }
-  }
+	if (typeof e === 'string') {
+		// e is a string (tr-*)
+		var fmt = translations[language][e];
+		if (!fmt)
+			return e;
+
+		if (fmt.indexOf("{}") === -1) {
+			return fmt;
+		}
+
+		var parts = fmt.split("{}");
+		var out = "";
+		for (var i = 0; i < (parts.length - 1); i++) {
+			out += parts[i] + arguments[i+1];
+		}
+
+		return out + parts[parts.length - 1];
+	} else {
+		// iterate all translation tokens (tr-*)
+		var mapping = translations[language];
+		for (var id in mapping) {
+			var elements = e.getElementsByClassName(id);
+			if (e.classList.contains(id)) {
+				e.innerText = mapping[id];
+			}
+			for (var i in elements) {
+				elements[i].innerText = mapping[id];
+			}
+		}
+	}
 }
+
+/*
+function tr(elem) {
+	if (elem) {
+		for (var i = 0; i < elem.childNodes.length; i++) {
+			var node = elem.childNodes[i];
+			var type = node.nodeType;
+
+			if (node.nodeName === "SCRIPT")
+				continue;
+
+			if (type == 3 && node.textContent.startsWith("tr-")) {
+				console.log("'" + node.textContent + "'");
+				node.textContent = tr(node.textContent);
+				//console.log("'" + node.textContent + "'");
+			} else if (type == 1 || type == 9 || type == 11) {
+				tr(node);
+			}
+		}
+	}
+}*/
 
 function adv_toggle(e)
 {
 	adv_mode = !adv_mode;
-	e.textContent = adv_mode ? "Extended: An" : "Extended: Aus";
+
+	e.classList.toggle('tr-extended-on', adv_mode);
+	e.classList.toggle('tr-extended-off', !adv_mode);
+
+	tr(e.parentNode);
+
 	adv_apply();
 }
 
@@ -91,7 +142,7 @@ function nav_onclick()
 	onDesc($("globalnav"), 'A', function(n) { removeClass(n, "here"); });
 	onParents(this, 'LI', function(n) { addClass(n.firstChild, "here"); });
 
-	i18n_translate_site();
+	tr(document.body);
 
 	return false;
 }
@@ -107,7 +158,7 @@ function preselect() {
 }
 
 function reboot() {
-	if (!confirm("Restart the router ?")) return;
+	if (!confirm("Restart the router?")) return;
 	send("/cgi-bin/misc", { func : "reboot" }, function(data) {
 		setText('msg', data);
 	});
@@ -133,17 +184,17 @@ function logout() {
 </noscript>
 
 <ul id="globalnav">
-	<li><a href="home.html" id="first">Home</a></li>
-	<li><a href="settings.html">Settings</a></li>
-	<li><a href="network.html">Network</a></li>
-	<li><a href="wifiscan.html">WLAN-Scan</a></li>
-	<li><a href="upgrade.html">Upgrade</a></li>
-	<li><a href="password.html">Password</a></li>
-	<li><a href="#" onclick="reboot()">Restart</a></li>
-	<li><a href="#" onclick="logout()">Logout</a></li>
-	<li><a href="#" onclick="adv_toggle(this)">Erweitert: Aus</a></li>
+	<li><a href="home.html" id="first" class="tr-home">Home</a></li>
+	<li><a href="settings.html" class="tr-settings">Settings</a></li>
+	<li><a href="network.html" class="tr-network">Network</a></li>
+	<li><a href="wifiscan.html" class="tr-wifi-scan">WLAN-Scan</a></li>
+	<li><a href="upgrade.html" class="tr-upgrade">Upgrade</a></li>
+	<li><a href="password.html" class="tr-password">Password</a></li>
+	<li><a href="#" onclick="reboot()" class="tr-restart">Restart</a></li>
+	<li><a href="#" onclick="logout()" class="tr-logout">Logout</a></li>
+	<li><a href="#" onclick="adv_toggle(this)" class="tr-extended-off">Extended: Off</a></li>
 	<li><a href="#">
-		<select id="i18n_language" onchange="i18n_translate_site()">
+		<select onchange="language = this.value; tr(document.body);">
 			<option value="de" selected="selected">DE</option>
 			<option value="en">EN</option>
 		</select></a>

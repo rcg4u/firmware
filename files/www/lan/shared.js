@@ -66,6 +66,11 @@ function addHelpText(elem, text) {
 			help.style.top = (e.clientY-20)+"px";
 			help.style.left = (e.clientX+80)+"px";
 			help.textContent = text;
+
+			if (text.startsWith("tr-")) {
+				help.classList.add(text);
+			}
+
 			show(help);
 		};
 
@@ -329,13 +334,17 @@ function append_options(parent, name, selected, choices)
 	for (var i in choices)
 	{
 		var s = (typeof choices[i] != 'object');
-		var choice_text = " " + (s ? choices[i] : choices[i][0]);
+		var choice_text = "" + (s ? choices[i] : choices[i][0]);
 		var choice_value = "" + (s ? choices[i] : choices[i][1]);
 
 		var option = append(select, 'option');
 		option.value = choice_value;
 		option.selected = (choice_value == selected) ? "selected" : "";
 		option.textContent= choice_text;
+
+		if (choice_text.startsWith("tr-")) {
+			option.classList.add(choice_text);
+		}
 	}
 	return select;
 }
@@ -348,6 +357,10 @@ function append_selection(parent, title, name, selected, choices)
 	p.className = "select_option";
 	label.textContent = title + ":";
 
+	if (title.startsWith("tr-")) {
+			label.classList.add(title);
+	}
+
 	append_options(p, name, selected, choices);
 	return p;
 }
@@ -359,6 +372,10 @@ function append_input(parent, title, name, value)
 	var div = append(parent, 'div');
 	var label = append(div, 'label');
 	var input = append(div, 'input');
+
+	if (title.startsWith("tr-")) {
+		label.classList.add(title);
+	}
 
 	label.textContent = title + ":";
 	input.value = (typeof value == "undefined") ? "" : value;
@@ -389,6 +406,10 @@ function _selection(type, parent, title, name, selected, choices)
 	p.className = "radio_option";
 	label.textContent = title + ":";
 
+	if (title.startsWith("tr-")) {
+		label.classList.add(title);
+	}
+
 	for (var i in choices) {
 		var s = (typeof choices[i] == 'string');
 		var choice_text = "" + (s ? choices[i] : choices[i][0]);
@@ -408,7 +429,11 @@ function _selection(type, parent, title, name, selected, choices)
 			input.checked = "checked"
 		}
 
-		label.textContent = " " + choice_text;
+		label.textContent = choice_text;
+
+		if (choice_text.startsWith("tr-")) {
+			label.classList.add(choice_text);
+		}
 
 		if (choice_text == "_") {
 			hide(div);

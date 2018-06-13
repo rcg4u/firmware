@@ -80,13 +80,13 @@ function appendSetting(p, path, value, mode)
 	switch (name)
 	{
 	case "country":
-		b = append_input(p, "Country", id, value);
+		b = append_input(p, "tr-country", id, value);
 		addClass(b.lastChild, "adv_disable");
 		break;
 	case "channel":
 		var channels = [1,2,3,4,5,6,7,8,9,10,11,12];
 		if (value > 35) channels = [36,40,44,48,52,56,60,64,100,104,108,112,116,120,124,128,132,136,140];
-		b = append_selection(p, "Channel", id, value, channels);
+		b = append_selection(p, "tr-channel", id, value, channels);
 		addClass(b.lastChild, "adv_disable");
 		addHelpText(b, "The channel on which the wireless card is sending. Please keep in mind that routers can not see if both sides are transmitting on different channels. The first channel is therefore recommended.");
 		break;
@@ -144,7 +144,7 @@ function appendSetting(p, path, value, mode)
 		break;
 */
 	case "mesh_on_wan":
-		b = append_radio(p, "Mesh-On-WAN", id, value, [["Yes", "1"], ["No", "0"]]);
+		b = append_radio(p, "Mesh-On-WAN", id, value, [["tr-yes", "1"], ["tr-no", "0"]]);
 		onDesc(b, "INPUT", function(e) {
 			e.onclick = function(e) {
 				var src = (e.target || e.srcElement);
@@ -162,7 +162,7 @@ function appendSetting(p, path, value, mode)
 		addHelpText(b, "This feature sends the mesh packets to the network at the WAN port. Please note that these broadcast packages have a negative impact on WAN network WLAN APs.");
 		break;
 	case "disabled":
-		b = append_radio(p, "Disabled", id, value, [["Yes", "1"], ["No", "0"]]);
+		b = append_radio(p, "tr-disabled", id, value, [["tr-yes", "1"], ["tr-no", "0"]]);
 		break;
 	default:
 		return;
@@ -463,11 +463,7 @@ function rebuild_wifi()
 		for (var sid in obj)
 			appendSetting(fs, ['wireless', dev, sid], obj[sid]);
 
-		var lan_help = "<b>LAN</b>: Enables a private, password-protected Wi-Fi network with access to its own Internet connection.";
-		var freifunk_help = "<b>Freifunk</b>: The WLAN access to the free-wireless network.";
-		var mesh_help = "<b>Mesh</b>: The Wi-Fi network which the routers communicate with each other.";
-		var wan_help = "<b>WAN</b>: Enables Internet access from another, traditional router.";
-		var mode_checks = append_check(fs, "Mode", dev+"_mode", info.modes, [["LAN","lan", lan_help], ["Freifunk","freifunk", freifunk_help], ["Mesh", "mesh", mesh_help], ["WAN", "wan", wan_help]]);
+		var mode_checks = append_check(fs, "Mode", dev+"_mode", info.modes, [["LAN","lan", "tr-lan-help"], ["Freifunk","freifunk", "tr-freifunk_help"], ["Mesh", "mesh", "tr-mesh_help"], ["WAN", "wan", "tr-wan_help"]]);
 		var parent = append(fs, "div");
 
 		// Print wireless interfaces.
@@ -798,6 +794,9 @@ function rebuild_switches()
 			select.onchange = getChangeHandler(port, mode, swinfo);
 		}
 	});
+
+	// translate all texts
+	tr(root);
 }
 
 /*
