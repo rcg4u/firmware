@@ -69,6 +69,7 @@ var translations = {
 		tr_user_count_hours_help: 'User of this router during the last two hours.',
 		tr_vpn_help: 'VPN-Server on the Internet, this node is connected to.',
 
+		tr_encryption: 'Encryption',
 		tr_transferred: 'Data Transfered'
 	},
 	de: {
@@ -140,6 +141,7 @@ var translations = {
 		tr_user_count_hours_help: 'Die Anzahl der Nutzer an diesem Router in den letzten zwei Stunden.',
 		tr_vpn_help: 'Der VPN-Server im Internet, mit dem der Knoten verbunden ist.',
 
+		tr_encryption: 'Verschl\xfcsselung',
 		tr_transferred: 'Data'
 	}
 }
