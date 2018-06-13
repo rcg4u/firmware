@@ -37,7 +37,7 @@ var translations = {
 		tr_inactive: 'Inactive',
 		tr_unknown: 'Unknown',
 
-		tr_individual-ports: 'Individual ports of the router that are not identified as part of the switch or WLAN.',
+		tr_individual_ports: 'Individual ports of the router that are not identified as part of the switch or WLAN.',
 		tr_ports: 'Ports',
 		tr_other: 'Other',
 		tr_delete: 'Delete',

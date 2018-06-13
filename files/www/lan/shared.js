@@ -301,6 +301,11 @@ function append_section(parent, title, id)
 {
 	var fs = append(parent, "fieldset");
 	var lg = append(fs, "legend");
+
+	if (title.startsWith("tr_")) {
+		lg.classList.add(title);
+	}
+
 	lg.textContent = title;
 	if (id) fs.id = id;
 	return fs;
@@ -310,6 +315,9 @@ function append_button(parent, text, onclick)
 {
 	var button = append(parent, 'button');
 	button.type = 'button';
+	if (text.startsWith("tr_")) {
+		button.classList.add(text);
+	}
 	button.textContent = text;
 	button.onclick = onclick;
 	return button;
@@ -318,7 +326,11 @@ function append_button(parent, text, onclick)
 function append_label(parent, title, value)
 {
 	var div = append(parent, 'div');
-	append(div, 'label').textContent = title + ":";
+	var label = append(div, 'label');
+	if (text.startsWith("tr_")) {
+		label.classList.add(text);
+	}
+	label.textContent = title + ":";
 	append(div, 'span').textContent = value;
 	return div;
 }
