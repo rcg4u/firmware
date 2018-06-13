@@ -57,9 +57,17 @@ var translations = {
 		tr_announce: 'Announce contents',
 		tr_autoupdater_help: 'The Autoupdater automatically updates the firmware to the latest version.',
 
-		tr_latitude: 'Breitengrad',
-		tr_longitude: 'L\xe4ngengrad',
-		tr_node_name: 'Node name',
+		tr_latitude: 'Latitude',
+		tr_longitude: 'longitude',
+		tr_node_name: 'Knotenname',
+
+		tr_system_help: 'Device overview.',
+		tr_mesh_help: 'The public community Netzwerk..',
+		tr_lan_help: 'The private LAN network.',
+		tr_wan_help: 'The WAN network to reach the Internet.'
+		tr_software_help: 'Some installed software versions.',
+		tr_user_count_hours_help: 'User of this router during the last two hours.',
+		tr_vpn_help: 'VPN-Server on the Internet, this node is connected to.',
 
 		tr_transferred: 'Data Transfered'
 	},
@@ -120,9 +128,17 @@ var translations = {
 		tr_announce: 'Inhalte verkünden',
 		tr_autoupdater_help: 'Der Autoupdater aktualisiert die Firmware automatisch auf die neuste Version.',
 
-		tr_latitude: 'Latitude',
-		tr_longitude: 'longitude',
-		tr_node_name: 'Knotenname',
+		tr_latitude: 'Breitengrad',
+		tr_longitude: 'L\xe4ngengrad',
+		tr_node_name: 'Node name',
+
+		tr_system_help: 'Eine \xdcbersicht \xfcber den Router.',
+		tr_mesh_help: 'Das \xf6ffentliche Freifunknetz..',
+		tr_lan_help: 'Das private Netz bzw. LAN.',
+		tr_wan_help: 'Das Netz \xfcber dass das Internet erreicht wird.'
+		tr_software_help: 'Einige installierte Softwareversionen.',
+		tr_user_count_hours_help: 'Die Anzahl der Nutzer an diesem Router in den letzten zwei Stunden.',
+		tr_vpn_help: 'Der VPN-Server im Internet, mit dem der Knoten verbunden ist.',
 
 		tr_transferred: 'Data'
 	}
